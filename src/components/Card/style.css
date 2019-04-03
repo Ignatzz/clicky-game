@@ -1,6 +1,9 @@
 .Cards img{
-  margin: 5px;
+  margin-bottom: 18px;
   max-height: 170px;
   max-width: 170px;
   text-align: center;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }

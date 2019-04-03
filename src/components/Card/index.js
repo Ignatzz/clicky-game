@@ -10,7 +10,7 @@ const Card = props => (
 		<img 
 		id={props.name}
     src={props.image}
-    alt="alt"
+    alt="picture failed to load"
 		/>
 	</div>
 );

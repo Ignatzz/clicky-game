@@ -1,3 +1,12 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
+nav {
+  margin-left: 20px;
+}
+
+a {
+  color: black;
+  font-size: 20px;
+}
+
+.jumbotron {
+  margin-bottom: none;
 }

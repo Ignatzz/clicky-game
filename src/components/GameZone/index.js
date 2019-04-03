@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
 import Card from '../Card';
 import images from "../../images.json";
-
+import "./style.css";
 class GameZone extends Component {
 	state = {
+		currentScore: 0,
+		highScore: 0,
 		images,
-		message: "Click one of the logos to begin!",
-		score: 0,
-		topScore: 0
+		message: "Click on any picture to start the game!"
     };
-    
     handleClick = (id, clicked) => {
-
 		const imageOrder = this.state.images;
-
 		if (clicked) {
 			imageOrder.forEach((image, index) => {
 				imageOrder[index].clicked = false;
 			});
 			return this.setState({
 				image: imageOrder.sort(() => Math.random() - 0.5),
-				message: "You Guessed Incorrectly!",
-				score: 0
+				message: "Incorrect!",
+				currentScore: 0
 			})
 		}
 		else {
@@ -30,16 +27,14 @@ class GameZone extends Component {
 					imageOrder[index].clicked = true;
 				}
 			});
-
-			const { topScore, score } = this.state;
-			const newScore = score + 1;
-			const newTopScore = newScore > topScore ? newScore : topScore;
-
+			const { highScore, currentScore } = this.state;
+			const newScore = currentScore + 1;
+			const newHighScore = newScore > highScore ? newScore : highScore;
 			return this.setState({
 				image: imageOrder.sort(() => Math.random() - 0.5),
-				message: "You Guessed Correctly!",
-				score: newScore,
-				topScore: newTopScore,
+				message: "Correct!",
+				currentScore: newScore,
+				highScore: newHighScore,
 			})
 		}
 	};
@@ -47,11 +42,11 @@ class GameZone extends Component {
 	render() {
 		return (
 			<div className="container-fluid mainCardContainer">
-			<div className="gameMessage text-center">
+			<div className="infoDisplay text-center">
 						<p>{this.state.message}</p>
 					</div>
-					<div className="gameScores text-center">
-						<p>Score: {this.state.score} | Top Score: {this.state.topScore}</p>
+					<div className="scoreDisplay text-center">
+						<p>Current Score: {this.state.currentScore}     --------------        High Score: {this.state.highScore}</p>
 					</div>
 				<div className="container">
 					
@@ -60,14 +55,12 @@ class GameZone extends Component {
 						<Card
 							key={image.id}
 							id={image.id}
-							name={image.name}
 							clicked={image.clicked}
 							image={image.image}
 							handleClick={this.handleClick}
 							/>
 					))}
 					</div>
-					
 				</div>
 			</div>
 		);
