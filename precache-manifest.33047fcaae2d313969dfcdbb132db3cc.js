@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/clicky-game/static/js/runtime~main.27874bd3.js"
   },
   {
-    "revision": "464cee0649a7d8688355",
-    "url": "/clicky-game/static/js/main.cdfe7ef4.chunk.js"
+    "revision": "45f7f41a6da65eb2e452",
+    "url": "/clicky-game/static/js/main.d9c0daaa.chunk.js"
   },
   {
     "revision": "45124f853ba07aa965c0",
     "url": "/clicky-game/static/js/2.6efc73d3.chunk.js"
   },
   {
-    "revision": "464cee0649a7d8688355",
-    "url": "/clicky-game/static/css/main.74209d82.chunk.css"
+    "revision": "45f7f41a6da65eb2e452",
+    "url": "/clicky-game/static/css/main.689f0d9b.chunk.css"
   },
   {
-    "revision": "d458461275896363188afba488390d48",
+    "revision": "a88198f38443150e87cadb23a415ac53",
     "url": "/clicky-game/index.html"
   }
 ];
